@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: #020617;
+		color: #ffffff;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-family: 'Inter', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	}
+
+	/* Scrollbar personalizado */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #020617;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #374151;
+		border-radius: 9999px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #22d3ee;
+	}
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+}
+
+
+
