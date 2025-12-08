@@ -1,82 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
-type LinkKey = 'nosotros' | 'servicios' | 'quienes' | 'galeria' | null;
 
 export default function Navbar(): JSX.Element {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<LinkKey>(null);
   const location = useLocation();
 
-  useEffect(() => {
-    const ids: LinkKey[] = ['nosotros', 'servicios', 'quienes', 'galeria'];
-    const observers: IntersectionObserver[] = [];
 
-    if (typeof window === 'undefined') return;
-
-    ids.forEach(id => {
-      const el = document.getElementById(id as string);
-      if (!el) return;
-
-      const obs = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) setActive(id);
-          });
-        },
-        { root: null, rootMargin: '-40% 0px -40% 0px', threshold: 0 }
-      );
-
-      obs.observe(el);
-      observers.push(obs);
-    });
-
-    const onHash = () => {
-      const h = window.location.hash.replace('#', '');
-      if (ids.includes(h as LinkKey)) setActive(h as LinkKey);
-    };
-
-    window.addEventListener('hashchange', onHash);
-    onHash();
-
-    return () => {
-      observers.forEach(o => o.disconnect());
-      window.removeEventListener('hashchange', onHash);
-    };
-  }, []);
-
-  const handleClick = (e: React.MouseEvent, id: string) => {
-    e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setActive(id as LinkKey);
-    } else {
-      window.location.hash = id;
-      setActive(id as LinkKey);
-    }
-    setOpen(false);
-  };
-
-  const NavLink = ({ id, label }: { id: LinkKey | string; label: string }) => {
-    const key = id as LinkKey;
-    const isActive = active === key;
-    return (
-      <a
-        href={`#${id}`}
-        onClick={(e) => handleClick(e, id as string)}
-        aria-current={isActive ? 'page' : undefined}
-        className={`relative px-4 py-2 inline-block text-base md:text-lg font-semibold uppercase tracking-wider transition-colors duration-200 ${isActive ? 'text-[#6D31E8]' : 'text-gray-700 hover:text-[#6D31E8]'}`}
-      >
-        {label}
-        <span
-          className={`absolute left-0 -bottom-0.5 h-0.5 bg-[#6D31E8] transition-all duration-300 transform origin-left ${isActive ? 'w-full scale-x-100' : 'w-0 scale-x-0'}`}
-        />
-      </a>
-    );
-  };
-
-  const PageLink = ({ to, label }: { to: string; label: string }) => {
+  const PageLink = ({ to, label }: { to: string; label: string }): JSX.Element => {
     const isActive = location.pathname === to;
     return (
       <Link

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook } from 'lucide-react';
 
 export default function Contacto() {
   const [formData, setFormData] = useState({ nombre: '', email: '', mensaje: '' });
