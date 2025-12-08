@@ -122,4 +122,23 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Global typography adjustments requested:
+     - Justify body text (paragraphs, list items, blocks) on ALL screen sizes
+     - Force headings to uppercase for titles/subtitles
+  */
+  :where(p, li, dd, dt, blockquote, .prose, .prose p, article, section, .content, .text-content) {
+    text-align: justify !important;
+    text-justify: inter-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
 }

@@ -1,7 +1,41 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  // Small counter hook: animates from 0 to target over duration ms
+  function useCount(target: number, duration = 1500) {
+    const [value, setValue] = useState(0);
+    useEffect(() => {
+      let rafId: number;
+      let start: number | null = null;
+      const easeOutQuad = (t: number) => t * (2 - t);
+
+      const step = (timestamp: number) => {
+        if (start === null) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const eased = easeOutQuad(progress);
+        setValue(Math.floor(eased * target));
+        if (progress < 1) rafId = requestAnimationFrame(step);
+      };
+
+      rafId = requestAnimationFrame(step);
+      return () => cancelAnimationFrame(rafId);
+    }, [target, duration]);
+    return value;
+  }
+
+  // Small presentational card for counters
+  function CounterCard({ label, color, target, duration, suffix }: { label: string; color: string; target: number; duration?: number; suffix?: string }) {
+    const count = useCount(target, duration);
+    return (
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
+        <div className={`text-4xl font-bold ${color} mb-2`}>{count}{suffix}</div>
+        <div className="text-gray-300">{label}</div>
+      </div>
+    );
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Overlay */}
@@ -19,60 +53,21 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1D1D1B]/80 via-[#1D1D1B]/60 to-[#1D1D1B]"></div>
       </div>
 
-      {/* Animated Gradient Blobs */}
-      <div className="absolute inset-0 overflow-hidden z-0">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 100, 0],
-            y: [0, -50, 0]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6D31E8] rounded-full blur-3xl"
-        ></motion.div>
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.4, 0.6, 0.4],
-            x: [0, -100, 0],
-            y: [0, 50, 0]
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#F4005E] rounded-full blur-3xl"
-        ></motion.div>
-      </div>
+      {/* Minimal: no decorative blurred blobs (keep background image only) */}
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8"
-        >
-          <Sparkles size={20} className="text-[#F4005E]" />
-          <span className="text-sm font-semibold">Líderes en logística especializada</span>
-        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tight"
+          className="max-w-4xl mx-auto text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight"
+          style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
         >
-          <span className="block text-white">VÍREMO</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6D31E8] via-[#F4005E] to-[#6D31E8] animate-gradient">
-            Movilidad sin límites
+          <span className="block text-white">SERVICIOS DE LOGÍSTICA</span>
+          <span className="block text-[#A78BFA]">
+            y transporte de carga sobredimensionada y maniobras portuarias.
           </span>
         </motion.h1>
 
@@ -80,11 +75,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+          className="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
           Especialistas en logística portuaria y transporte de{' '}
-          <span className="text-[#6D31E8] font-semibold">carga sobredimensionada</span>.
-          Excelencia operativa y servicio personalizado que transforma desafíos en soluciones.
+          <span className="text-[#A78BFA] font-semibold">carga sobredimensionada</span>. Excelencia operativa y servicio personalizado que transforma desafíos en soluciones.
         </motion.p>
 
         <motion.div
@@ -95,14 +89,14 @@ export default function Hero() {
         >
           <a
             href="#contacto"
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#6D31E8] to-[#5a28c4] hover:from-[#5a28c4] hover:to-[#4a1fa0] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg shadow-[#6D31E8]/50 hover:shadow-xl hover:shadow-[#6D31E8]/60"
+            className="group inline-flex items-center gap-2 bg-[#7147ee] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
           >
             Solicitar Cotización
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={20} className="ml-2" />
           </a>
           <a
             href="#servicios"
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 hover:border-white/40 px-8 py-4 rounded-full text-lg font-semibold transition-all"
+            className="inline-flex items-center gap-2 bg-[#FCE7F3] text-[#7C3AED] px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
           >
             Ver Servicios
           </a>
@@ -115,18 +109,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-            <div className="text-4xl font-bold text-[#6D31E8] mb-2">+15</div>
-            <div className="text-gray-300">Años de experiencia</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-            <div className="text-4xl font-bold text-[#F4005E] mb-2">1000+</div>
-            <div className="text-gray-300">Operaciones exitosas</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-            <div className="text-4xl font-bold text-white mb-2">24/7</div>
-            <div className="text-gray-300">Disponibilidad</div>
-          </div>
+          <CounterCard label="Años de experiencia" color="text-[#6D31E8]" target={15} duration={1400} suffix="+" />
+          <CounterCard label="Operaciones exitosas" color="text-[#F4005E]" target={1000} duration={2000} suffix="+" />
+          <CounterCard label="Disponibilidad" color="text-white" target={24} duration={1400} suffix="/7" />
         </motion.div>
       </div>
 
