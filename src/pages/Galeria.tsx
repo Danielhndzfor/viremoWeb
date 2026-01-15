@@ -38,182 +38,182 @@ export default function Galeria(): JSX.Element {
     const galleryImages: GalleryImage[] = [
         {
             id: 1,
-            src: '/src/assets/images/1.jpg',
+            src: '/images/1.jpg',
             title: 'Instalaciones Logísticas Integrales',
             description: 'Operaciones profesionales de carga y descarga en nuestras instalaciones especializadas',
             category: 'Maniobras'
         },
         {
             id: 2,
-            src: '/src/assets/images/4.JPG',
+            src: '/images/4.JPG',
             title: 'Transporte Terrestre de Carga Pesada',
             description: 'Traslado seguro de mercancías en unidades de última generación',
             category: 'Fletes Terrestres'
         },
         {
             id: 3,
-            src: '/src/assets/images/5.JPG',
+            src: '/images/5.JPG',
             title: 'Maniobras Portuarias Especializadas',
             description: 'Operaciones profesionales de carga y descarga en zonas portuarias',
             category: 'Maniobras'
         },
         {
             id: 4,
-            src: '/src/assets/images/6.jpg',
+            src: '/images/6.jpg',
             title: 'Logística de Transporte Nacional',
             description: 'Servicios de flete terrestre con cobertura en todo México',
             category: 'Fletes Terrestres'
         },
         {
             id: 5,
-            src: '/src/assets/images/7.jpg',
+            src: '/images/7.jpg',
             title: 'Equipo Pesado de Última Tecnología',
             description: 'Maquinaria especializada para movimientos de carga de gran tonelaje',
             category: 'Maquinaria'
         },
         {
             id: 6,
-            src: '/src/assets/images/8.jpg',
+            src: '/images/8.jpg',
             title: 'Bodegas de Almacenamiento Seguro',
             description: 'Instalaciones modernas con sistemas de seguridad y control de inventario',
             category: 'Almacenaje'
         },
         {
             id: 7,
-            src: '/src/assets/images/9.jpg',
+            src: '/images/9.jpg',
             title: 'Transporte de Contenedores Marítimos',
             description: 'Traslado eficiente de contenedores desde puertos a destino final',
             category: 'Fletes Terrestres'
         },
         {
             id: 8,
-            src: '/src/assets/images/10.jpg',
+            src: '/images/10.jpg',
             title: 'Consolidación y Desconsolidación de Carga',
             description: 'Servicios especializados de preparación de mercancías para embarque',
             category: 'Maniobras'
         },
         {
             id: 9,
-            src: '/src/assets/images/11.jpg',
+            src: '/images/11.jpg',
             title: 'Montacargas y Equipo de Carga',
             description: 'Flota moderna de equipos para manejo eficiente de materiales',
             category: 'Maquinaria'
         },
         {
             id: 10,
-            src: '/src/assets/images/12.jpg',
+            src: '/images/12.jpg',
             title: 'Almacén de Contenedores y Mercancía',
             description: 'Espacios amplios para resguardo temporal y permanente de carga',
             category: 'Almacenaje'
         },
         {
             id: 11,
-            src: '/src/assets/images/13.jpg',
+            src: '/images/13.jpg',
             title: 'Unidades de Carga de Alto Rendimiento',
             description: 'Flotilla de tractocamiones equipados para todo tipo de terreno',
             category: 'Fletes Terrestres'
         },
         {
             id: 12,
-            src: '/src/assets/images/14.jpg',
+            src: '/images/14.jpg',
             title: 'Operaciones de Carga y Descarga',
             description: 'Personal capacitado en maniobras seguras y eficientes de mercancías',
             category: 'Maniobras'
         },
         {
             id: 13,
-            src: '/src/assets/images/15.jpg',
+            src: '/images/15.jpg',
             title: 'Grúas Industriales de Gran Capacidad',
             description: 'Equipamiento pesado para movimiento de cargas extraordinarias y voluminosas',
             category: 'Maquinaria'
         },
         {
             id: 14,
-            src: '/src/assets/images/16.jpg',
+            src: '/images/16.jpg',
             title: 'Centro de Distribución y Almacenaje',
             description: 'Infraestructura logística con control de temperatura y seguridad avanzada',
             category: 'Almacenaje'
         },
         {
             id: 15,
-            src: '/src/assets/images/17.jpg',
+            src: '/images/17.jpg',
             title: 'Servicios de Transporte Foráneo',
             description: 'Rutas nacionales con seguimiento GPS y monitoreo en tiempo real',
             category: 'Fletes Terrestres'
         },
         {
             id: 16,
-            src: '/src/assets/images/18.jpg',
+            src: '/images/18.jpg',
             title: 'Operaciones en Terminal Portuaria',
             description: 'Coordinación experta de movimientos de carga en puertos nacionales',
             category: 'Maniobras'
         },
         {
             id: 17,
-            src: '/src/assets/images/19.jpg',
+            src: '/images/19.jpg',
             title: 'Equipos de Elevación y Transporte',
             description: 'Maquinaria certificada para operaciones de carga pesada y especial',
             category: 'Maquinaria'
         },
         {
             id: 18,
-            src: '/src/assets/images/20.jpg',
+            src: '/images/20.jpg',
             title: 'Patios de Almacenamiento de Contenedores',
             description: 'Áreas amplias y seguras para resguardo de contenedores vacíos y cargados',
             category: 'Almacenaje'
         },
         {
             id: 19,
-            src: '/src/assets/images/21.jpg',
+            src: '/images/21.jpg',
             title: 'Transporte de Mercancía General',
             description: 'Soluciones de flete adaptadas a las necesidades de cada cliente',
             category: 'Fletes Terrestres'
         },
         {
             id: 20,
-            src: '/src/assets/images/22.jpg',
+            src: '/images/22.jpg',
             title: 'Trincado y Aseguramiento de Carga',
             description: 'Técnicas profesionales para garantizar la integridad de la mercancía',
             category: 'Maniobras'
         },
         {
             id: 21,
-            src: '/src/assets/images/23.jpg',
+            src: '/images/23.jpg',
             title: 'Operadores Certificados de Maquinaria',
             description: 'Equipo humano especializado en manejo de maquinaria pesada logística',
             category: 'Maquinaria'
         },
         {
             id: 22,
-            src: '/src/assets/images/27.JPG',
+            src: '/images/27.JPG',
             title: 'Flotilla de Transporte de Carga',
             description: 'Unidades modernas con mantenimiento preventivo y rastreo satelital constante',
             category: 'Fletes Terrestres'
         },
         {
             id: 23,
-            src: '/src/assets/images/29.JPG',
+            src: '/images/29.JPG',
             title: 'Servicios de Cross Docking',
             description: 'Transferencia rápida de mercancías sin almacenamiento intermedio prolongado',
             category: 'Maniobras'
         },
         {
             id: 24,
-            src: '/src/assets/images/32.JPG',
+            src: '/images/32.JPG',
             title: 'Instalaciones de Almacenamiento Temporal',
             description: 'Espacios flexibles para resguardo de mercancía en tránsito internacional',
             category: 'Almacenaje'
         },
         {
             id: 25,
-            src: '/src/assets/images/33.JPG',
+            src: '/images/33.JPG',
             title: 'Parque de Maquinaria Logística',
             description: 'Equipos modernos para movimiento eficiente en operaciones diarias',
             category: 'Maquinaria'
         },
         {
             id: 26,
-            src: '/src/assets/images/puerto.jpg',
+            src: '/images/puerto.jpg',
             title: 'Operaciones en Puerto de Manzanillo',
             description: 'Servicios integrales de maniobras en el principal puerto del Pacífico',
             category: 'Maniobras'

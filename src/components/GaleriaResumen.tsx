@@ -5,19 +5,19 @@ import { ArrowRight, ZoomIn } from 'lucide-react';
 export default function GaleriaResumen() {
   const imagenesMuestra = [
     {
-      src: 'https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=600',
+      src: '/images/1.jpg',
       title: 'Fletes Terrestres'
     },
     {
-      src: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600',
+      src: '/images/4.JPG',
       title: 'Maniobras Portuarias'
     },
     {
-      src: 'https://images.unsplash.com/photo-1605648916319-cf082f7524a1?w=600',
+      src: '/images/5.JPG',
       title: 'Maquinaria Pesada'
     },
     {
-      src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600',
+      src: '/images/6.jpg',
       title: 'Almacenamiento'
     }
   ];
