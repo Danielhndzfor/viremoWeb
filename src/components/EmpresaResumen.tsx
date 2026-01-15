@@ -1,4 +1,4 @@
-import empresaImg from '../assets/images/1.jpg';
+import empresaImg from '/images/1.jpg';
 
 export default function EmpresaResumen(): JSX.Element {
     return (
