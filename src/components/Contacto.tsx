@@ -52,7 +52,7 @@ export default function Contacto() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-3">
-            <span className="bg-[#A78BFA] bg-clip-text text-transparent">Contáctanos</span>
+            <span className="bg-[#6D31E8] bg-clip-text text-transparent">Contáctanos</span>
           </h2>
           <p className="text-gray-600 text-lg">Estamos listos para hacer realidad tu proyecto logístico</p>
         </motion.div>

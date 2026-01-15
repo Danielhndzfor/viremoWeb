@@ -10,9 +10,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center font-bold text-2xl shadow-lg">
-                V
-              </div>
+              <img src="/inicial.png" alt="VÍREMO" className="w-10 h-10 rounded-xl shadow-lg" />
               <h3 className="text-2xl font-bold">VÍREMO</h3>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">

@@ -66,8 +66,8 @@ export default function Hero() {
           style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
         >
           <span className="block text-white">SERVICIOS DE LOGÍSTICA</span>
-          <span className="block text-[#A78BFA]">
-            y transporte de carga sobredimensionada y maniobras portuarias.
+          <span className="block text-[#6D31E8]">
+            Y transporte de carga con exceso de peso y dimensiones.
           </span>
         </motion.h1>
 
@@ -77,8 +77,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Especialistas en logística portuaria y transporte de{' '}
-          <span className="text-[#A78BFA] font-semibold">carga sobredimensionada</span>. Excelencia operativa y servicio personalizado que transforma desafíos en soluciones.
+        Especialistas en logística portuaria y transporte de carga sobredimensionada
         </motion.p>
 
         <motion.div
@@ -89,14 +88,14 @@ export default function Hero() {
         >
           <a
             href="#contacto"
-            className="group inline-flex items-center gap-2 bg-[#7147ee] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
+            className="group inline-flex items-center gap-2 bg-[#6D31E8] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
           >
             Solicitar Cotización
             <ArrowRight size={20} className="ml-2" />
           </a>
           <a
             href="#servicios"
-            className="inline-flex items-center gap-2 bg-[#FCE7F3] text-[#7C3AED] px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
+            className="inline-flex items-center gap-2 bg-[#FCE7F3] text-[#6D31E8] px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
           >
             Ver Servicios
           </a>

@@ -1,6 +1,7 @@
 ﻿import { useEffect } from 'react';
 import Hero from '../components/Hero';
 import QuienesSomosResumen from '../components/QuienesSomosResumen';
+import EmpresaResumen from '../components/EmpresaResumen';
 import ServiciosResumen from '../components/ServiciosResumen';
 import GaleriaResumen from '../components/GaleriaResumen';
 import Contacto from '../components/Contacto';
@@ -30,6 +31,7 @@ export default function Home(): JSX.Element {
 
       <main className="pt-[96px] sm:pt-[120px] md:pt-[136px]">
         <Hero />
+        <EmpresaResumen />
         <QuienesSomosResumen />
         <ServiciosResumen />
         <GaleriaResumen />

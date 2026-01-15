@@ -7,16 +7,15 @@ type Puerto = { name: string; coordinates: [number, number] };
 
 const geoUrl = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json';
 
-export default function PresenceMap({ puertos }: { puertos: Puerto[] }) {
+export default function PresenceMap({ puertos, width = 800, height = 360, scale = 900 }: { puertos: Puerto[]; width?: number; height?: number; scale?: number }) {
     const [hover, setHover] = useState<string | null>(null);
 
     // grid diagonal lines params
-    const width = 800;
-    const height = 500;
+    // spacing kept modest so lines remain visible at smaller heights
     const spacing = 28;
 
     // create a d3 projection that matches the ComposableMap projectionConfig
-    const projection = geoMercator().scale(900).center([-102, 23]).translate([width / 2, height / 2]);
+    const projection = geoMercator().scale(scale).center([-102, 23]).translate([width / 2, height / 2]);
     const pathGenerator = geoPath().projection(projection as any);
 
     // build diagonal lines array (both directions) in SVG coords
@@ -30,12 +29,11 @@ export default function PresenceMap({ puertos }: { puertos: Puerto[] }) {
     }
 
     return (
-        <div className="relative w-full rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#071426] to-[#052033]" />
+        <div className="relative w-full">
 
             <ComposableMap
                 projection="geoMercator"
-                projectionConfig={{ scale: 900, center: [-102, 23] }}
+                projectionConfig={{ scale: scale, center: [-102, 23] }}
                 className="relative z-10"
                 width={width}
                 height={height}
@@ -77,7 +75,7 @@ export default function PresenceMap({ puertos }: { puertos: Puerto[] }) {
                                             geography={geo}
                                             fill="rgba(139,92,246,0.09)"
                                             stroke="#6D31E8"
-                                            strokeWidth={0.6}
+                                            strokeWidth={1.2}
                                         />
                                     ))}
 
@@ -91,7 +89,7 @@ export default function PresenceMap({ puertos }: { puertos: Puerto[] }) {
                                 )}
 
                                 {/* diagonal purple grid lines clipped to Mexico silhouette */}
-                                <g clipPath={mexicoPathD ? 'url(#mexicoClip)' : undefined} stroke="#7C3AED" strokeWidth={1.0} opacity={0.18}>
+                                <g clipPath={mexicoPathD ? 'url(#mexicoClip)' : undefined} stroke="#6D31E8" strokeWidth={1.0} opacity={0.68}>
                                     {diag1.map((l, i) => (
                                         <line key={`d1-${i}`} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} />
                                     ))}
@@ -157,10 +155,25 @@ export default function PresenceMap({ puertos }: { puertos: Puerto[] }) {
 
                 {/* Markers for ports with inline labels */}
                 {puertos.map((p, i) => {
-                    const isManzanillo = p.name.toLowerCase().includes('manzan');
-                    const mainR = isManzanillo ? 12 : 8;
-                    const haloR = isManzanillo ? 28 : 16;
-                    const fillColor = isManzanillo ? '#FF4DA3' : (i % 2 === 0 ? '#8B5CF6' : '#EC4899');
+                    const nameLower = p.name.toLowerCase();
+                    const isManzanillo = nameLower.includes('manzan');
+
+                    // smaller radii to reduce visual weight
+                    const mainR = isManzanillo ? Math.max(6, Math.round(height * 0.025)) : Math.max(4, Math.round(height * 0.016));
+                    const haloR = Math.round(mainR * 2.0);
+
+                    // brand colors: purple and pink
+                    const fillColor = isManzanillo ? '#F4005E' : (i % 2 === 0 ? '#6D31E8' : '#F4005E');
+
+                    // label sizing scaled with map height
+                    const labelFont = isManzanillo ? Math.max(9, Math.round(height * 0.025)) : Math.max(7, Math.round(height * 0.018));
+                    const labelY = Math.round(mainR * 0.45);
+
+                    // labels moved to left for specific ports (Ensenada, Manzanillo, Lázaro Cárdenas)
+                    const leftLabel = /ensen|manzan|lazaro|lázaro/i.test(p.name);
+                    const labelX = leftLabel ? -(mainR + 8) : Math.round(mainR + 6);
+                    const textAnchor = leftLabel ? 'end' : 'start';
+
                     return (
                         <Marker key={p.name} coordinates={p.coordinates}>
                             <motion.g
@@ -170,18 +183,26 @@ export default function PresenceMap({ puertos }: { puertos: Puerto[] }) {
                                 onMouseEnter={() => setHover(p.name)}
                                 onMouseLeave={() => setHover(null)}
                             >
-                                <circle r={mainR} fill={fillColor} stroke="#fff" strokeWidth={1.6} />
-                                <circle r={haloR} fill="none" stroke={fillColor} strokeWidth={1.2} opacity={0.85} />
-                                <text x={12 + (isManzanillo ? 2 : 0)} y={isManzanillo ? 6 : 4} fontSize={isManzanillo ? 13 : 12} fill="#E6F7FF" fontWeight={800}>{p.name}</text>
+                                <circle r={mainR} fill={fillColor} stroke="#fff" strokeWidth={1} />
+                                <circle r={haloR} fill="none" stroke={fillColor} strokeWidth={1.0} opacity={0.6} />
+                                <text x={labelX} y={labelY} fontSize={labelFont} textAnchor={textAnchor} fill="#E6F7FF" fontWeight={700}>{p.name}</text>
                             </motion.g>
                         </Marker>
                     );
                 })}
 
                 {/* Place inicial.png in the Gulf of Mexico (bigger and a bit higher) */}
-                <Marker key="gulf" coordinates={[-90, 22]}>
+                <Marker key="gulf" coordinates={[-92, 26]}>
                     <g>
-                        <image href="/inicial.png" width={64} height={64} x={-32} y={-40} clipPath="circle(32px at 32px 32px)" />
+                        {/* scale logo size with map height */}
+                        {
+                            (() => {
+                                const logoSize = Math.max(50, Math.round(height * 0.12));
+                                const x = -logoSize / 2;
+                                const y = -Math.round(logoSize * 0.7);
+                                return <image href="/inicial.png" width={logoSize} height={logoSize} x={x} y={y} clipPath={`circle(${Math.round(logoSize/2)}px at ${Math.round(logoSize/2)}px ${Math.round(logoSize/2)}px)`} />;
+                            })()
+                        }
                     </g>
                 </Marker>
             </ComposableMap>

@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Lightbulb, Award, TrendingUp, Users, Shield } from 'lucide-react';
+import { Target, Eye, Handshake, BookOpen, Star, Lightbulb, Award, TrendingUp, Users, Shield } from 'lucide-react';
 import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppWidget from '../components/WhatsAppWidget';
 import PresenceMap from '../components/PresenceMap';
+import puertoImg from '../assets/images/puerto.jpg';
 
 export default function QuienesSomos(): JSX.Element {
     useEffect(() => {
@@ -25,31 +26,31 @@ export default function QuienesSomos(): JSX.Element {
     const valores = [
         {
             title: 'INTEGRIDAD',
-            description: 'La integridad guía todas nuestras decisiones y acciones. Trabajamos con honestidad, ética y respeto, cumpliendo nuestras promesas y manteniendo la coherencia entre lo que decimos y lo que hacemos.',
+            description: 'Guía todas nuestras decisiones y acciones. Trabajamos con ética y respeto, cumpliendo nuestras promesas y manteniendo la coherencia entre lo que decimos y lo que hacemos.',
             icon: Shield,
             color: 'from-purple-500 to-pink-500'
         },
         {
             title: 'CONFIANZA',
-            description: 'Nuestra mayor garantía; la confianza puesta qué es la base de cada relación con nuestros clientes y aliados. Actuamos con integridad, responsabilidad y transparencia para generar la seguridad de que cada proyecto será gestionado con el máximo compromiso y profesionalismo.',
+            description: 'Es la base de cada relación con nuestros clientes y aliados comerciales. Nos esforzamos por brindar certeza y tranquilidad en cada operación, respaldando su inversión y protegiendo su carga en todo momento.',
             icon: Award,
             color: 'from-pink-500 to-purple-500'
         },
         {
             title: 'EXCELENCIA',
-            description: 'Superamos expectativas. En nuestra empresa, la excelencia guía cada acción y decisión. Nos comprometemos a entregar servicios de la más alta calidad, cuidando cada detalle y aplicando las mejores prácticas para garantizar resultados excepcionales.',
+            description: 'Guía cada acción y decisión. Nos comprometemos a entregar servicios de la más alta calidad, cuidando cada detalle y aplicando las mejores prácticas para garantizar resultados excepcionales.',
             icon: TrendingUp,
             color: 'from-purple-600 to-pink-400'
         },
         {
             title: 'ORGULLO',
-            description: 'Pasión por lo que hacemos, sentimos orgullo de cada proyecto que realizamos, porque refleja nuestro esfuerzo, conocimiento y profesionalismo. Valoramos nuestro trabajo y el impacto positivo que generamos para nuestros clientes, impulsando siempre la excelencia y la mejora continua.',
-            icon: Heart,
+            description: 'Pasión por lo que hacemos; sentimos orgullo de cada proyecto porque refleja nuestro esfuerzo, conocimiento y profesionalismo.',
+            icon: Star,
             color: 'from-pink-600 to-purple-400'
         },
         {
             title: 'ACTITUD',
-            description: 'Nuestra mejor herramienta. Adoptamos una actitud positiva, proactiva y orientada a resultados en cada desafío logístico. Creemos que la forma en que enfrentamos las dificultades define nuestro éxito, impulsando la colaboración, la mejora continua y la confianza de nuestros clientes.',
+            description: 'Nuestra mejor herramienta. Adoptamos una actitud positiva, proactiva y orientada a resultados en cada desafío logístico.',
             icon: Users,
             color: 'from-purple-500 to-pink-600'
         }
@@ -72,14 +73,24 @@ export default function QuienesSomos(): JSX.Element {
             <main className="pt-[96px] sm:pt-[120px] md:pt-[136px]">
 
                 {/* Hero Section */}
-                <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1D1D1B] via-[#2D2D2B] to-[#1D1D1B]">
-                    {/* Animated Background */}
-                    <div className="absolute inset-0 opacity-20">
-                        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full filter blur-[120px] animate-pulse"></div>
-                        <div className="absolute bottom-20 right-20 w-96 h-96 bg-pink-500 rounded-full filter blur-[120px] animate-pulse delay-700"></div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-400 rounded-full filter blur-[150px] animate-pulse delay-1000"></div>
+                <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #1D1D1B 50%, #242424 75%, #1a1a1a 100%)' }}>
+                    {/* Modern Geometric Background */}
+                    <div className="absolute inset-0">
+                        {/* Geometric shapes */}
+                        <div className="absolute top-20 right-10 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #6D31E8 0%, transparent 70%)' }}></div>
+                        <div className="absolute bottom-10 left-20 w-80 h-80 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #F4005E 0%, transparent 70%)' }}></div>
+                        
+                        {/* Diagonal lines */}
+                        <div className="absolute inset-0 opacity-5">
+                            <div className="absolute top-0 left-0 w-full h-full" style={{
+                                backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(109, 49, 232, 0.3) 35px, rgba(109, 49, 232, 0.3) 36px, transparent 36px, transparent 70px, rgba(244, 0, 94, 0.3) 70px, rgba(244, 0, 94, 0.3) 71px)'
+                            }}></div>
+                        </div>
+                        
+                        {/* Top accent bar */}
+                        <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(to right, transparent, #6D31E8 50%, #F4005E, transparent)' }}></div>
                     </div>
-
+                  
                     <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -87,8 +98,8 @@ export default function QuienesSomos(): JSX.Element {
                             transition={{ duration: 0.8 }}
                             className="mb-8"
                         >
-                            <div className="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl shadow-2xl shadow-purple-500/50 mb-6">
-                                <span className="text-6xl font-black text-white">V</span>
+                            <div className="inline-flex items-center justify-center mb-6">
+                                <img src="/inicial.png" alt="VÍREMO" className="w-32 h-32" />
                             </div>
                         </motion.div>
 
@@ -96,16 +107,16 @@ export default function QuienesSomos(): JSX.Element {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white uppercase"
                         >
-                            Conoce a <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">VÍREMO</span>
+                            Conoce a <span className="bg-[#6D31E8] bg-clip-text text-transparent">VÍREMO</span>
                         </motion.h1>
 
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+                            className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed text-justify"
                         >
                             Somos una empresa con visión estratégica, compromiso firme y un alto nivel de profesionalismo
                         </motion.p>
@@ -113,131 +124,227 @@ export default function QuienesSomos(): JSX.Element {
                 </section>
 
                 {/* Descripción Section */}
-                <section className="py-20 bg-white">
-                    <div className="max-w-7xl mx-auto px-6">
+                <section className="w-full">
+                    {/* Título - Full Width */}
+                    <div className="w-full py-16 text-center" style={{ backgroundColor: '#6D31E8' }}>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="text-4xl md:text-5xl font-bold text-white uppercase"
+                        >
+                            ¿Quiénes Somos?
+                        </motion.h2>
+                    </div>
+
+                    {/* 3 Bloques simétricos */}
+                    <div className="w-full grid md:grid-cols-3">
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="text-center mb-16"
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="p-12 flex flex-col items-center justify-center text-center"
+                            style={{ backgroundColor: '#F4005E' }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                                ¿Quiénes Somos?
-                            </h2>
+                            <Lightbulb className="text-white mb-6" size={48} />
+                            <p className="text-white leading-relaxed text-lg text-justify">
+                                Somos una empresa con <span className="font-bold">visión estratégica</span>, compromiso firme y un alto nivel de profesionalismo, brindamos soluciones integrales de logística portuaria y transporte terrestre especializado, con un enfoque centrado a la excelencia operativa y servicio personalizado.
+                            </p>
                         </motion.div>
 
-                        <div className="grid md:grid-cols-3 gap-8">
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl border border-purple-200 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                            >
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                                    <Lightbulb className="text-white" size={32} />
-                                </div>
-                                <p className="text-gray-700 leading-relaxed">
-                                    Somos una empresa con <span className="font-bold text-purple-600">visión estratégica</span>, compromiso firme y un alto nivel de profesionalismo, brindamos soluciones integrales de logística portuaria y transporte terrestre especializado, con un enfoque centrado a la excelencia operativa y servicio personalizado.
-                                </p>
-                            </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="p-12 flex flex-col items-center justify-center text-center bg-white"
+                        >
+                            <TrendingUp className="mb-6" size={48} style={{ color: '#6D31E8' }} />
+                            <p className="text-gray-800 leading-relaxed text-lg text-justify">
+                                Nuestra experiencia, sumada al compromiso de la <span className="font-bold" style={{ color: '#6D31E8' }}>mejora continua</span>, nos posiciona como un aliado confiable para operaciones críticas y de alta responsabilidad operativa.
+                            </p>
+                        </motion.div>
 
-                            <motion.div
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.4 }}
-                                className="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-3xl border border-pink-200 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                            >
-                                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                                    <TrendingUp className="text-white" size={32} />
-                                </div>
-                                <p className="text-gray-700 leading-relaxed">
-                                    Nuestra experiencia, sumada al compromiso de la <span className="font-bold text-pink-600">mejora continua</span>, nos posiciona como un aliado confiable para operaciones críticas y de alta responsabilidad operativa.
-                                </p>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.6 }}
-                                className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl border border-purple-200 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                            >
-                                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                                    <Users className="text-white" size={32} />
-                                </div>
-                                <p className="text-gray-700 leading-relaxed">
-                                    Cada operación es respaldada por una <span className="font-bold text-purple-600">red sólida de aliados estratégicos</span> que extienden nuestra capacidad, fortaleciendo la cadena de suministros.
-                                </p>
-                            </motion.div>
-                        </div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                            className="p-12 flex flex-col items-center justify-center text-center"
+                            style={{ backgroundColor: '#1D1D1B' }}
+                        >
+                            <Users className="text-white mb-6" size={48} />
+                            <p className="text-white leading-relaxed text-lg text-justify">
+                                Cada operación es respaldada por una <span className="font-bold">red sólida de aliados estratégicos</span> que extienden nuestra capacidad, fortaleciendo la cadena de suministros.
+                            </p>
+                        </motion.div>
                     </div>
                 </section>
 
                 {/* Misión y Visión Section */}
-                <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <div className="grid md:grid-cols-2 gap-12">
-
-                            {/* Misión */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8 }}
-                                className="relative"
-                            >
-                                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl opacity-20 blur-xl"></div>
-                                <div className="relative bg-white p-10 rounded-3xl shadow-xl border border-purple-100">
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
-                                            <Target className="text-white" size={32} />
-                                        </div>
-                                        <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                                            Nuestra Misión
-                                        </h3>
-                                    </div>
-                                    <p className="text-gray-700 text-lg leading-relaxed italic">
-                                        "Brindar Soluciones de Logística Portuaria y Transporte Terrestre Especializado, garantizando <span className="font-bold text-purple-600">excelencia operativa</span> y cumplimiento normativo que genere valor para nuestros clientes, a través de un servicio seguro y eficiente".
-                                    </p>
-                                </div>
-                            </motion.div>
-
-                            {/* Visión */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="relative"
-                            >
-                                <div className="absolute -inset-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-3xl opacity-20 blur-xl"></div>
-                                <div className="relative bg-white p-10 rounded-3xl shadow-xl border border-pink-100">
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
-                                            <Eye className="text-white" size={32} />
-                                        </div>
-                                        <h3 className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                                            Nuestra Visión
-                                        </h3>
-                                    </div>
-                                    <p className="text-gray-700 text-lg leading-relaxed italic">
-                                        "Consolidarnos en el mercado nacional como una empresa <span className="font-bold text-pink-600">líder en Servicios de Logística Integral</span> y Transporte Especializado, respaldada por una estructura organizacional sólida, y un firme compromiso con el crecimiento, la confianza y el bienestar de quienes forman parte de nuestra cadena de valor".
-                                    </p>
-                                </div>
-                            </motion.div>
-
-                        </div>
+                <section className="w-full">
+                    {/* Título - Full Width */}
+                    <div className="w-full py-16 text-center" style={{ backgroundColor: '#F4005E' }}>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="text-4xl md:text-5xl font-bold text-white uppercase"
+                        >
+                            Misión y Visión
+                        </motion.h2>
                     </div>
+
+                    {/* 2 Bloques simétricos */}
+                    <div className="w-full grid md:grid-cols-2">
+                        {/* Misión */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="p-16 flex flex-col items-center justify-center text-center"
+                            style={{ backgroundColor: '#6D31E8' }}
+                        >
+                            <Target className="text-white mb-8" size={56} />
+                            <h3 className="text-3xl font-bold mb-6 text-white uppercase">
+                                Nuestra Misión
+                            </h3>
+                            <p className="text-white text-lg leading-relaxed italic text-justify">
+                                "Brindar Soluciones de Logística Portuaria y Transporte Terrestre Especializado, garantizando <span className="font-bold">excelencia operativa</span> y cumplimiento normativo que genere valor para nuestros clientes, a través de un servicio seguro y eficiente".
+                            </p>
+                        </motion.div>
+
+                        {/* Visión */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="p-16 flex flex-col items-center justify-center text-center bg-white"
+                        >
+                            <Eye className="mb-8" size={56} style={{ color: '#F4005E' }} />
+                            <h3 className="text-3xl font-bold mb-6 uppercase" style={{ color: '#F4005E' }}>
+                                Nuestra Visión
+                            </h3>
+                            <p className="text-gray-800 text-lg leading-relaxed italic text-justify">
+                                "Consolidarnos en el mercado nacional como una empresa <span className="font-bold" style={{ color: '#F4005E' }}>líder en Servicios de Logística Integral</span> y Transporte Especializado, respaldada por una estructura organizacional sólida, y un firme compromiso con el crecimiento, la confianza y el bienestar de quienes forman parte de nuestra cadena de valor".
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Política de Calidad y Seguridad Section */}
+                <section className="w-full">
+                    {/* Título - Full Width */}
+                    <div className="w-full py-16 text-center" style={{ backgroundColor: '#1D1D1B' }}>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="text-4xl md:text-5xl font-bold text-white uppercase"
+                        >
+                            Política de Calidad y Seguridad
+                        </motion.h2>
+                    </div>
+
+                    {/* Contenido Principal - Full Width */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="w-full py-20 px-6"
+                        style={{ backgroundColor: '#6D31E8' }}
+                    >
+                        <div className="max-w-5xl mx-auto text-center">
+                            <Shield className="text-white mx-auto mb-8" size={64} />
+                            <p className="text-white text-xl md:text-2xl leading-relaxed mb-8 text-justify">
+                                En VIREMO, asumimos con seriedad y responsabilidad el compromiso de ofrecer <span className="font-bold">soluciones de logísticas integrales, confiables y altamente competitivas</span> Diseñadas para responder con eficacia a las exigencias del entorno portuario. Cumpliendo de forma rigurosa con las normativas y necesidades específicas de cada servicio.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Grid de 3 bloques */}
+                    <div className="w-full grid md:grid-cols-3">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="p-12 flex flex-col items-center justify-center text-center bg-white"
+                        >
+                            <TrendingUp className="mb-6" size={56} style={{ color: '#6D31E8' }} />
+                            <h3 className="text-2xl font-bold mb-4 uppercase" style={{ color: '#6D31E8' }}>
+                                Calidad y Mejora Continua
+                            </h3>
+                            <p className="text-gray-800 text-lg leading-relaxed text-justify">
+                                Trabajamos con un enfoque en la calidad y la mejora continua, porque entendemos que la confianza se construye con transparencia en los procesos y resultados consistentes.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="p-12 flex flex-col items-center justify-center text-center"
+                            style={{ backgroundColor: '#F4005E' }}
+                        >
+                            <Users className="text-white mb-6" size={56} />
+                            <h3 className="text-2xl font-bold mb-4 text-white uppercase">
+                                Aliados Estratégicos
+                            </h3>
+                            <p className="text-white text-lg leading-relaxed text-justify">
+                                Cada operación es respaldada por una red sólida de aliados estratégicos que extienden nuestra capacidad, fortaleciendo la cadena de suministros.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                            className="p-12 flex flex-col items-center justify-center text-center"
+                            style={{ backgroundColor: '#1D1D1B' }}
+                        >
+                            <Award className="text-white mb-6" size={56} />
+                            <h3 className="text-2xl font-bold mb-4 text-white uppercase">
+                                Excelencia Operativa
+                            </h3>
+                            <p className="text-white text-lg leading-relaxed text-justify">
+                                Nuestra misión es clara, superar constantemente las expectativas de nuestros clientes, nuestros colaboradores se desafían así mismo, todos los días, para alcanzar el nivel de excelencia.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    {/* Bloque Final - Full Width */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        className="w-full py-16 px-6 text-center"
+                        style={{ backgroundColor: '#6D31E8' }}
+                    >
+                        <div className="max-w-4xl mx-auto">
+                            <Handshake className="text-white mx-auto mb-6" size={48} />
+                            <p className="text-white text-2xl md:text-3xl font-bold italic text-justify">
+                                Este compromiso es inquebrantable, es la fuerza que impulsa todo lo que hacemos.
+                            </p>
+                        </div>
+                    </motion.div>
                 </section>
 
                 {/* Filosofía Section */}
                 <section className="py-20 bg-gradient-to-br from-[#1D1D1B] to-[#2D2D2B] relative overflow-hidden">
                     <div className="absolute inset-0 opacity-10">
-                        <div className="absolute top-10 right-20 w-96 h-96 bg-purple-500 rounded-full filter blur-[100px] animate-pulse"></div>
-                        <div className="absolute bottom-10 left-20 w-96 h-96 bg-pink-500 rounded-full filter blur-[100px] animate-pulse delay-500"></div>
+                        <div className="absolute top-10 right-20 w-96 h-96 bg-purple-500 rounded-full filter blur-[100px]"></div>
+                        <div className="absolute bottom-10 left-20 w-96 h-96 bg-pink-500 rounded-full filter blur-[100px]"></div>
                     </div>
 
                     <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
@@ -248,17 +355,17 @@ export default function QuienesSomos(): JSX.Element {
                             transition={{ duration: 0.8 }}
                         >
                             <div className="flex justify-center mb-8">
-                                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-purple-500/50">
-                                    <Heart className="text-white" size={40} />
+                                <div className="w-20 h-20 bg-[#F4005E] rounded-3xl flex items-center justify-center shadow-2xl">
+                                    <BookOpen className="text-white" size={40} />
                                 </div>
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-                                Nuestra <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Filosofía</span>
+                                NUESTRA <span className="bg-[#F4005E] bg-clip-text text-transparent">FILOSOFÍA</span>
                             </h2>
 
-                            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed italic">
-                                "En Víremo <span className="text-purple-400 font-bold">no movemos carga</span>, creamos soluciones seguras para desafíos reales. Nuestro compromiso es ser el lazo que une tus necesidades con soluciones logísticas y de transporte especializadas, garantizando la <span className="text-pink-400 font-bold">tranquilidad en cada envío</span>."
+                            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed italic text-justify">
+                                "En VÍREMO no movemos carga, creamos soluciones seguras para desafíos reales. Nuestro compromiso es ser el lazo que une tus necesidades con soluciones logísticas y de transporte especializadas, garantizando la tranquilidad en cada envío."
                             </p>
                         </motion.div>
                     </div>
@@ -274,10 +381,10 @@ export default function QuienesSomos(): JSX.Element {
                             transition={{ duration: 0.8 }}
                             className="text-center mb-16"
                         >
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                                Nuestros Valores
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-[#6D31E8] bg-clip-text text-transparent">
+                                NUESTROS VALORES
                             </h2>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            <p className="text-xl text-gray-600 mx-autO">
                                 Los principios que guían cada decisión y acción en VÍREMO
                             </p>
                         </motion.div>
@@ -294,11 +401,11 @@ export default function QuienesSomos(): JSX.Element {
                                 >
                                     <div className={`absolute -inset-1 bg-gradient-to-r ${valor.color} rounded-3xl opacity-0 group-hover:opacity-100 blur transition-all duration-500`}></div>
                                     <div className="relative bg-white p-8 rounded-3xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
-                                        <valor.icon className="text-purple-600 mb-4" size={40} />
-                                        <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                                        <valor.icon className="text-[#6D31E8] mb-4" size={40} />
+                                        <h3 className="text-2xl font-bold mb-4 bg-[#6D31E8] bg-clip-text text-transparent">
                                             {valor.title}
                                         </h3>
-                                        <p className="text-gray-700 leading-relaxed">
+                                        <p className="text-gray-700 leading-relaxed text-justify">
                                             {valor.description}
                                         </p>
                                     </div>
@@ -309,8 +416,12 @@ export default function QuienesSomos(): JSX.Element {
                 </section>
 
                 {/* Mapa de Presencia Section */}
-                <section className="py-20 bg-gradient-to-br from-[#1D1D1B] via-[#2D2D2B] to-[#1D1D1B] relative overflow-hidden">
-                    <div className="max-w-7xl mx-auto px-6">
+                <section
+                    className="py-20 relative overflow-hidden"
+                    style={{ backgroundImage: `url(${puertoImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                >
+                    <div className="absolute inset-0 bg-black/60" />
+                    <div className="max-w-7xl mx-auto px-6 relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -319,41 +430,23 @@ export default function QuienesSomos(): JSX.Element {
                             className="text-center mb-16"
                         >
                             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                                Nuestra <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Presencia</span>
+                                NUESTRA <span className="bg-[#F4005E] bg-clip-text text-transparent">PRESENCIA</span>
                             </h2>
-                            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                            <p className="text-xl text-gray-300 max-w-3xl mx-auto text-justify">
                                 Contamos con operaciones en los principales puertos comerciales de México
                             </p>
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative max-w-5xl mx-auto"
+                            className="relative mx-auto w-full"
                         >
-                            <div className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-purple-500/30 shadow-2xl">
-                                <PresenceMap puertos={puertos} />
-
-                                {/* Lista de puertos debajo del mapa (badges)
-                                <div className="mt-6 flex flex-wrap justify-center gap-4">
-                                    {puertos.map((puerto, index) => (
-                                        <motion.div
-                                            key={puerto.name}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.5, delay: index * 0.08 + 0.2 }}
-                                            className={`px-4 py-2 rounded-full bg-gradient-to-r ${index % 2 === 0 ? 'from-purple-500 to-pink-500' : 'from-pink-500 to-purple-500'} text-white font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 text-sm`}
-                                        >
-                                            <div className="flex items-center gap-2">
-                                                <MapPin size={16} />
-                                                <span>{puerto.name}</span>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div> */}
+                            {/* Full-bleed wrapper so the map spans the viewport width */}
+                            <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 ">
+                                <PresenceMap puertos={puertos} height={300} scale={700} />
                             </div>
                         </motion.div>
                     </div>

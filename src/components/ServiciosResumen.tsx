@@ -41,7 +41,7 @@ export default function ServiciosResumen() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-[#A78BFA] bg-clip-text text-transparent">
+            <span className="bg-[#6D31E8] bg-clip-text text-transparent">
               Nuestros Servicios
             </span>
           </h2>

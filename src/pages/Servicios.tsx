@@ -41,13 +41,15 @@ export default function Servicios(): JSX.Element {
     {
       id: 'fletes',
       title: 'FLETES TERRESTRES',
-      subtitle: 'IMPORTACIÓN Y EXPORTACIÓN',
+      subtitle: 'DE IMPORTACIÓN Y EXPORTACIÓN',
       icon: Truck,
       color: 'from-blue-300 to-blue-400',
       items: [
-        { icon: MapPin, text: 'Foráneos' },
-        { icon: MapPin, text: 'Locales' },
-        { icon: Container, text: 'Traslado local de contenedores llenos y vacíos' }
+        { icon: MapPin, text: 'Carga con exceso de Dimensiones y sobre peso' },
+        { icon: MapPin, text: 'Carga Contenerizada Full y Sencillo' },
+        { icon: Container, text: 'Carga peligrosa (IMO)' },
+        { icon: Package, text: 'Carga Suelta' },
+        { icon: MapPin, text: 'Traslados locales' }
       ]
     },
     {
@@ -58,9 +60,9 @@ export default function Servicios(): JSX.Element {
       color: 'from-purple-300 to-purple-400',
       items: [
         { icon: Ship, text: 'Fuera de puerto (servicio exclusivo en Manzanillo)' },
-        { icon: ArrowLeftRight, text: 'Carga, descarga y traspaleo de mercancías' },
-        { icon: Layers, text: 'Desconsolidación de contenedores' },
-        { icon: Box, text: 'Consolidación y trincado de mercancías de exportación' }
+        { icon: ArrowLeftRight, text: 'Carga, descarga y Traspaleo de Mercancía' },
+        { icon: Layers, text: 'Desconsolidación y Consolidación (carga general y sobredimensionada)' },
+        { icon: Box, text: 'Trincado de Automóviles, carga general y sobredimensionada' }
       ]
     },
     {
@@ -70,10 +72,11 @@ export default function Servicios(): JSX.Element {
       icon: Package,
       color: 'from-pink-300 to-pink-400',
       items: [
-        { icon: Wind, text: 'Fumigación de contenedores' },
-        { icon: Box, text: 'Enlonado de carga' },
-        { icon: Scale, text: 'Pesaje de contenedor' },
-        { icon: FileCheck, text: 'Certificado de trinca sobre dimensión y centro de gravedad' }
+        { icon: Wind, text: 'Fumigación de Contenedores' },
+        { icon: Box, text: 'Certificado de trinca (Carga sobredimensionada)' },
+        { icon: Scale, text: 'Certificado de centro de Gravedad (Carga sobredimensionada)' },
+        { icon: FileCheck, text: 'Limpieza de contenedores' },
+        { icon: Scale, text: 'Básculas certificadas' }
       ]
     },
     {
@@ -92,7 +95,7 @@ export default function Servicios(): JSX.Element {
       color: 'from-teal-300 to-teal-400',
       items: [
         { icon: Package, text: 'Carga Suelta' },
-        { icon: Container, text: 'Contenedores' },
+        { icon: Container, text: 'Contenedores llenos y vacíos' },
         { icon: ShieldCheck, text: 'Seguro de Mercancía' }
       ]
     }
@@ -120,9 +123,7 @@ export default function Servicios(): JSX.Element {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <div className="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-3xl shadow-2xl shadow-purple-500/50 mb-6">
-                <Package size={64} className="text-white" />
-              </div>
+              <img src="/inicial.png" alt="VÍREMO" className="w-32 h-32  mb-6 justify-center mx-auto" />
             </motion.div>
 
             <motion.h1
@@ -131,7 +132,7 @@ export default function Servicios(): JSX.Element {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white"
             >
-              Nuestros <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Servicios</span>
+              NUESTROS <span className="bg-[#F4005E] bg-clip-text text-transparent">SERVICIOS</span>
             </motion.h1>
 
             <motion.p

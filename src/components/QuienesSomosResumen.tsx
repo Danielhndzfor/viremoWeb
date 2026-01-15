@@ -14,7 +14,7 @@ export default function QuienesSomosResumen() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        <span className="bg-[#A78BFA] bg-clip-text text-transparent">
+                        <span className="bg-[#6D31E8] bg-clip-text text-transparent">
                             Quiénes Somos
                         </span>
                     </h2>
@@ -33,8 +33,8 @@ export default function QuienesSomosResumen() {
                         transition={{ delay: 0.1 }}
                         className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all group"
                     >
-                        <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <Target size={32} className="text-white" />
+                        <div className="w-16 h-16 bg-[#6D31E8] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <Target size={32} className="text-white" />
                         </div>
                         <h3 className="text-2xl font-bold mb-4 text-gray-900">Nuestra Misión</h3>
                         <p className="text-gray-600 leading-relaxed">
@@ -51,7 +51,7 @@ export default function QuienesSomosResumen() {
                         transition={{ delay: 0.2 }}
                         className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all group"
                     >
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <div className="w-16 h-16 bg-[#F4005E] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <Eye size={32} className="text-white" />
                         </div>
                         <h3 className="text-2xl font-bold mb-4 text-gray-900">Nuestra Visión</h3>
@@ -69,7 +69,7 @@ export default function QuienesSomosResumen() {
                         transition={{ delay: 0.3 }}
                         className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all group"
                     >
-                        <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-orange-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <div className="w-16 h-16 bg-[#1D1D1B] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <Users size={32} className="text-white" />
                         </div>
                         <h3 className="text-2xl font-bold mb-4 text-gray-900">Nuestros Valores</h3>
