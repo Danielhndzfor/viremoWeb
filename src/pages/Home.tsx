@@ -32,9 +32,9 @@ export default function Home(): JSX.Element {
       <main className="pt-[96px] sm:pt-[120px] md:pt-[136px]">
         <Hero />
         <EmpresaResumen />
-        <QuienesSomosResumen />
+        {/* <QuienesSomosResumen /> */}
         <ServiciosResumen />
-        <GaleriaResumen />
+        {/* <GaleriaResumen /> */}
         <Contacto />
       </main>
 

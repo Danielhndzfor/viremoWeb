@@ -18,7 +18,7 @@ export default function Footer() {
               Excelencia operativa y compromiso con nuestros clientes.
             </p>
             {/* Social Media */}
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               <a href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110">
                 <Facebook size={20} />
               </a>
@@ -31,7 +31,7 @@ export default function Footer() {
               <a href="#" className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110">
                 <Twitter size={20} />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -71,7 +71,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="text-gray-400 inline-flex items-center gap-2">
                 <span className="w-1 h-1 rounded-full bg-pink-400"></span>
-                Fletes Terrestres
+                Flete Terrestre
               </li>
               <li className="text-gray-400 inline-flex items-center gap-2">
                 <span className="w-1 h-1 rounded-full bg-pink-400"></span>
@@ -98,8 +98,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Email</p>
-                  <a href="mailto:contacto@viremo.com" className="hover:text-white transition-colors">
-                    contacto@viremo.com
+                  <a href="mailto:comercializacion@viremo.com.mx" className="hover:text-white transition-colors">
+                    comercializacion@viremo.com.mx
                   </a>
                 </div>
               </li>
@@ -109,8 +109,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Teléfono</p>
-                  <a href="tel:+525512345678" className="hover:text-white transition-colors">
-                    +52 55 1234 5678
+                  <a href="tel:+523314344864" className="hover:text-white transition-colors">
+                    +52 33 1434 4864
                   </a>
                 </div>
               </li>
@@ -120,7 +120,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Ubicación</p>
-                  <p>Ciudad de México, México</p>
+                  <p>Manzanillo, Colima</p>
                 </div>
               </li>
             </ul>
@@ -133,14 +133,14 @@ export default function Footer() {
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} VÍREMO. Todos los derechos reservados.
             </p>
-            <div className="flex gap-6 text-sm">
+            {/* <div className="flex gap-6 text-sm">
               <a href="#" className="text-gray-500 hover:text-white transition-colors">
                 Política de Privacidad
               </a>
               <a href="#" className="text-gray-500 hover:text-white transition-colors">
                 Términos y Condiciones
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

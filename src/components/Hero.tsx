@@ -29,9 +29,9 @@ export default function Hero() {
   function CounterCard({ label, color, target, duration, suffix }: { label: string; color: string; target: number; duration?: number; suffix?: string }) {
     const count = useCount(target, duration);
     return (
-      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-        <div className={`text-4xl font-bold ${color} mb-2`}>{count}{suffix}</div>
-        <div className="text-gray-300">{label}</div>
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+        <div className={`text-2xl sm:text-3xl md:text-4xl font-bold ${color} mb-1 sm:mb-2`}>{count}{suffix}</div>
+        <div className="text-xs sm:text-sm md:text-base text-gray-300">{label}</div>
       </div>
     );
   }
@@ -40,65 +40,60 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[#1D1D1B]"></div>
-        <div 
-          className="absolute inset-0 opacity-30"
+        <div
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop')`,
+            backgroundImage: "url('/fondo.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1D1D1B]/80 via-[#1D1D1B]/60 to-[#1D1D1B]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1D1D1B]/60 via-[#1D1D1B]/40 to-[#1D1D1B]/60"></div>
       </div>
 
-      {/* Minimal: no decorative blurred blobs (keep background image only) */}
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl mx-auto text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight"
-          style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+          className="max-w-full mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight"
+          style={{ display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
         >
-          <span className="block text-white">SERVICIOS DE LOGÍSTICA</span>
-          <span className="block text-[#6D31E8]">
-            Y transporte de carga con exceso de peso y dimensiones.
-          </span>
+          <span className="block text-white">SERVICIOS DE LOGÍSTICA Y TRANSPORTE DE CARGA CON EXCESO DE PESO Y DIMENSIONES.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-        Especialistas en logística portuaria y transporte de carga sobredimensionada
+          Especialistas en logística portuaria y transporte de carga sobredimensionada
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
         >
           <a
             href="#contacto"
-            className="group inline-flex items-center gap-2 bg-[#6D31E8] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
+            className="group inline-flex items-center gap-2 bg-gradient-to-br from-[#6D31E8] to-[#F4005E] text-white px-5 py-2.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-colors w-full sm:w-auto justify-center"
           >
             Solicitar Cotización
-            <ArrowRight size={20} className="ml-2" />
+            <ArrowRight size={18} className="ml-2 sm:size-[20px]" />
           </a>
-          <a
+          {/* <a
             href="#servicios"
             className="inline-flex items-center gap-2 bg-[#FCE7F3] text-[#6D31E8] px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-colors"
           >
             Ver Servicios
-          </a>
+          </a> */}
         </motion.div>
 
         {/* Stats */}
@@ -106,10 +101,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          className="mt-12 sm:mt-16 md:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto px-2 sm:px-0"
         >
           <CounterCard label="Años de experiencia" color="text-[#6D31E8]" target={15} duration={1400} suffix="+" />
-          <CounterCard label="Operaciones exitosas" color="text-[#F4005E]" target={1000} duration={2000} suffix="+" />
+          <CounterCard label="Operaciones exitosas" color="text-[#F4005E]" target={3000} duration={2000} suffix="+" />
           <CounterCard label="Disponibilidad" color="text-white" target={24} duration={1400} suffix="/7" />
         </motion.div>
       </div>
@@ -119,12 +114,12 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
+          className="w-5 sm:w-6 h-8 sm:h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
         >
           <motion.div className="w-1.5 h-1.5 bg-white rounded-full"></motion.div>
         </motion.div>
