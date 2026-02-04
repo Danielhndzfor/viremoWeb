@@ -8,6 +8,10 @@
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://viremo.com/inicial.png</image:loc>
+      <image:title>VÍREMO Logística Portuaria</image:title>
+    </image:image>
   </url>
   
   <!-- Servicios -->
