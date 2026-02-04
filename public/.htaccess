@@ -1,0 +1,18 @@
+# .htaccess for hosting Vite SPA on Hostinger
+# Serve index.html for any request that isn't a real file or directory
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Don't rewrite existing files or directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Rewrite all other requests to index.html (SPA fallback)
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# Optional: set default charset and disable directory listing
+AddDefaultCharset UTF-8
+Options -Indexes

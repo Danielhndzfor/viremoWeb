@@ -1,9 +1,9 @@
 ﻿import { useEffect } from 'react';
 import Hero from '../components/Hero';
-import QuienesSomosResumen from '../components/QuienesSomosResumen';
+// import QuienesSomosResumen from '../components/QuienesSomosResumen';
 import EmpresaResumen from '../components/EmpresaResumen';
 import ServiciosResumen from '../components/ServiciosResumen';
-import GaleriaResumen from '../components/GaleriaResumen';
+// import GaleriaResumen from '../components/GaleriaResumen';
 import Contacto from '../components/Contacto';
 import Footer from '../components/Footer';
 import Topbar from '../components/Topbar';

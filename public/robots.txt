@@ -1,0 +1,20 @@
+# robots.txt para Viremo
+# Permite indexación completa del sitio
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos innecesarios
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /assets/*.map$
+
+# Sitemap
+Sitemap: https://viremo.com/sitemap.xml
+
+# Crawl-delay para bots específicos (opcional)
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 0

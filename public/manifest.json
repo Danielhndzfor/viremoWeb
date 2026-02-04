@@ -1,0 +1,27 @@
+{
+  "name": "Viremo - Soluciones Tecnológicas Innovadoras",
+  "short_name": "Viremo",
+  "description": "Transformamos tu negocio con soluciones tecnológicas avanzadas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/inicial.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/inicial.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "technology", "productivity"],
+  "lang": "es-ES",
+  "dir": "ltr"
+}

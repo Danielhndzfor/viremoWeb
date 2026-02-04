@@ -1,8 +1,8 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Phone } from 'lucide-react';
 
 export default function Topbar(): JSX.Element {
-    const [lang, setLang] = useState<'ES' | 'EN'>('ES');
+    // const [lang, setLang] = useState<'ES' | 'EN'>('ES');
 
     return (
         <div className="fixed top-0 left-0 right-0 z-50 bg-[#0B173D] text-white">
